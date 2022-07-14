@@ -1,0 +1,21 @@
+const { readFile, writeFile } = require("fs").promises;
+const path = require("path");
+
+console.log("start - Read Files");
+console.log("done - Read & Write Files");
+console.log("starting the next one");
+
+const path1 = path.join(__dirname, "responses", "response1", "response1.txt");
+const path2 = path.join(__dirname, "responses", "response2.txt");
+const path3 = path.join(__dirname, "responses", "result.txt");
+
+const filesOperation = async ()=> {
+    const file1 = await readFile(path1,);
+    const file2 = await readFile(path2);
+    writeFile(path3, `Result1: ${file1} \r\nResult2 ${file2}`);
+}
+
+filesOperation();
+
+console.log("done - Read & Write Files");
+console.log("starting the next one");
